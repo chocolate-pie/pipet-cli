@@ -1,4 +1,6 @@
+/// <reference path="acorn-loose.d.ts" />
 import * as acorn from 'acorn'
+import * as acornLoose from 'acorn-loose'
 import { dirname } from 'dirname-filename-esm'
 import { readFileSync } from 'fs'
 import { Merge } from 'type-fest'
@@ -7,7 +9,12 @@ type AcornBody = {
 }
 const getImportModuleFromFile = (_dirname = dirname(import.meta)): { Module: string[] } => {
    const file = readFileSync(_dirname, 'utf-8')
-   const Ast: Merge<acorn.Node, AcornBody> = acorn.parse(file, { ecmaVersion: 2020, sourceType: 'module' })
+   let Ast: Merge<acorn.Node, AcornBody>
+   try {
+     Ast = acorn.parse(file, { ecmaVersion: 2020, sourceType: 'module' })
+   } catch (e) {
+     Ast = acornLoose.parse(file, { ecmaVersion: 2020, sourceType: 'module' })
+   }
    const importModule: string[] = []
    if (typeof Ast.body !== 'undefined') {
    for (let i = 0; i < Ast.body.length; i++) {

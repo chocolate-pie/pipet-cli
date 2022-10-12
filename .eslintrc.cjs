@@ -13,6 +13,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/consistent-type-definitions': 'off'
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/triple-slash-reference': 'off'
   }
 }
