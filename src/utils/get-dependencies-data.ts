@@ -5,7 +5,6 @@ const getDependanciesData = (
   dirname: string
 ): { dependencies: string[], devDependencies: string[] } => {
   if (!isPackageJsonExists(dirname)) {
-    console.error('Package.json Not Found')
     throw new Error('package.json Not Found')
   }
   const txtData = JSON.parse(

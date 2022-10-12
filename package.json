@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "acorn": "^8.8.0",
-    "dirname-filename-esm": "^1.1.1"
+    "dirname-filename-esm": "^1.1.1",
+    "type-fest": "^3.1.0"
   }
 }
