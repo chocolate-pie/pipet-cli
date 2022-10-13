@@ -1,3 +1,11 @@
 /node_modules
 /src
 /build
+/dist
+/tests
+.eslintignore
+.eslintrc.cjs
+.prettierrc
+tsconfig.eslint.json
+tsconfig.json
+webpack.config.js

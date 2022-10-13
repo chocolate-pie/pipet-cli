@@ -33,13 +33,15 @@ const main = (): void => {
      }
    }
    // eslint-disable-next-line
-   console.log(`📢 | Delete Dependencies: ${deleteDependencies.join(' ')}`)
+   console.log(`📢 | Delete Dependencies: ${deleteDependencies.length > 0 ? deleteDependencies.join(' ') : 'none'}`)
+   if (deleteDependencies.length > 0) {
    if (platform() === 'win32') {
      execSync(`pushd ${cwd()} && npm uninstall ${deleteDependencies.join(' ')}`)
    } else {
     execSync(`(cd ${cwd()} ; npm uninstall ${deleteDependencies.join(' ')})`)
    }
    console.log(`${UNINSTALL_EMOJI} | Uninstall Done.`)
+   }
 }
 
 main()

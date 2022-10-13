@@ -7,6 +7,8 @@ Remove unnecessary dependencies to speed up ```npm install```
 🎊 automatically delete DefinitelyTyped Dependencies.
 
 😎 Just type ```pipet``` in the command line. Easy.
+
+![Image01](images/image.png)
 ### Install
 ```sh
 npm install -g pipet-cli
