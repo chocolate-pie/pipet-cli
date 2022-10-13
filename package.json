@@ -17,6 +17,9 @@
     "cli",
     "tools"
   ],
+  "bin": {
+    "pipet": "public/index.cjs"
+  },
   "author": "chocolate-pie",
   "license": "MIT",
   "bugs": {
@@ -45,7 +48,15 @@
   "dependencies": {
     "acorn": "^8.8.0",
     "acorn-loose": "^8.3.0",
+    "acorn-walk": "^8.2.0",
     "dirname-filename-esm": "^1.1.1",
     "type-fest": "^3.1.0"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "child_process": false,
+    "process": false
   }
 }

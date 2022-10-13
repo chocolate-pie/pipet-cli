@@ -1,14 +1,17 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.ts',
-  mode: 'development',
+  entry: './dist/index.js',
+  mode: 'production',
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].cjs',
+    path: path.resolve(__dirname, 'public')
   },
   module: {
-    rules: [{ test: /\.ts$/, use: ['babel-loader'] }]
+    rules: [{ test: /\.js$/, use: ['babel-loader'] }, {
+      test: /\.(js|ts)$/,
+      loader: require.resolve('@open-wc/webpack-import-meta-loader')
+    }]
   },
   target: 'node'
 }

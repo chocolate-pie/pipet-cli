@@ -1,6 +1,5 @@
 {
   "presets": [
-    ["@babel/preset-env", { "targets": { "ie": 11, "safari": 7 } }],
-    ["@babel/preset-typescript"]
+    ["@babel/preset-env", { "targets": { "ie": 11, "safari": 7 } }]
   ]
 }
