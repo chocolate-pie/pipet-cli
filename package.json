@@ -1,6 +1,6 @@
 {
   "name": "pipet-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Remove unnecessary dependencies",
   "main": "index.js",
   "type": "module",
@@ -18,7 +18,7 @@
     "tools"
   ],
   "bin": {
-    "pipet": "public/index.cjs"
+    "pipet": "public/main.cjs"
   },
   "author": "chocolate-pie",
   "license": "MIT",
