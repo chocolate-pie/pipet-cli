@@ -8,6 +8,7 @@ import { platform } from 'os'
 const SMILE_EMOJI = '🥳'
 const UNINSTALL_EMOJI = '🎊'
 const main = (): void => {
+  try {
    const deleteDependencies: string[] = []
    var UninstallConsoleData: string[] = []
    // eslint-disable-next-line
@@ -42,6 +43,9 @@ const main = (): void => {
    }
    console.log(`${UNINSTALL_EMOJI} | Uninstall Done.`)
    }
+  } catch (e: any) {
+    console.log(`Error: ${e as string}`)
+  }
 }
 
 main()

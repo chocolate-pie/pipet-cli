@@ -1,8 +1,8 @@
 {
   "name": "pipet-cli",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Remove unnecessary dependencies",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,7 @@
     "tools"
   ],
   "bin": {
-    "pipet": "public/main.cjs"
+    "pipet": "./public/main.cjs"
   },
   "author": "chocolate-pie",
   "license": "MIT",
