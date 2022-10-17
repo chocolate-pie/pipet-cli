@@ -7,8 +7,10 @@ import { execSync } from 'child_process'
 import { platform } from 'os'
 const SMILE_EMOJI = '🥳'
 const UNINSTALL_EMOJI = '🎊'
+const START_EMOJI = '😎'
 const main = (): void => {
   try {
+   console.log(`${START_EMOJI} Start Pipet CLI`)
    const deleteDependencies: string[] = []
    var UninstallConsoleData: string[] = []
    // eslint-disable-next-line
