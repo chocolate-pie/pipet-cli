@@ -53,4 +53,20 @@ Example:
 ```sh
 npx pipet --uninstaller npm
 ```
+```--ignore-file-path``` Specifies the path of the dependency configuration file to ignore. Dependencies to be ignored will not be deleted, even if they are targeted for deletion. default: ```./.pipetignore```
+
+Example:
+```sh
+npx pipet --ignore-file-path ./.pipetignore
+```
+### How to write Ignore file  
+Default Ignore File Name: ```.pipetignore```
+
+Write with line breaks.
+
+Example:
+```txt
+exampleDependencies01
+exampleDependencies02
+```
 ![Image02](images/image03.png)
