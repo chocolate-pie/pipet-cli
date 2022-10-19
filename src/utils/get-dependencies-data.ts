@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 const getDependanciesData = (
   dirname: string
-): { dependencies: string[], devDependencies: string[] } => {
+): { dependencies: string[]; devDependencies: string[] } => {
   if (!isPackageJsonExists(dirname)) {
     throw new Error('package.json Not Found')
   }
@@ -14,7 +14,7 @@ const getDependanciesData = (
   const devDependancies = txtData.devDependencies
   return {
     dependencies: Object.keys(dependancies) ?? [],
-    devDependencies: Object.keys(devDependancies) ?? []
+    devDependencies: Object.keys(devDependancies) ?? [],
   }
 }
 

@@ -1,10 +1,26 @@
 import getFiles from './get-files-data.js'
 import getImportModuleFromFile from './utils/get-import-modules.js'
-const getAllUseDependencies = (dirname: string, cb: (moduleName: string) => void): string[] => {
-  const files = getFiles(dirname)
+import isIncludeArray from './utils/is-include-array.js'
+import path from 'path'
+const getAllUseDependencies = (
+  dirname: string,
+  extname: string[],
+  cb: (moduleName: string) => void
+): string[] => {
+  const files = [...getFiles(dirname)].filter((item: string) => {
+    if (extname.length > 0) {
+      if (isIncludeArray(path.extname(item), extname)) {
+        return true
+      }
+     return false
+    } else {
+     return true
+    }
+  })
   const tmpArr = []
   const tmpArr2: string[] = []
   for (let i = 0; i < files.length; i++) {
+    cb(files[i])
     tmpArr.push(getImportModuleFromFile(files[i]))
   }
   tmpArr.forEach((items) => {
@@ -12,9 +28,6 @@ const getAllUseDependencies = (dirname: string, cb: (moduleName: string) => void
       tmpArr2.push(items.Module[i])
     }
   })
-  for (const items of files) {
-    cb(items)
-  }
   return tmpArr2
 }
 
