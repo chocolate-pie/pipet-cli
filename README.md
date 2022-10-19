@@ -21,10 +21,10 @@ Remove unnecessary dependencies to speed up ```npm install```
 | ``` const example = require('example')``` | 2.1.0 |
 | ``` const example = require.resolve('example')``` | 2.1.0 |
 | ``` import example from 'example' ``` | 2.1.0 |
-| ``` const example = import('example/example')``` | 2.2.0 | 
-| ``` const example = require('example/example')``` | 2.2.0 |
-| ``` const example = require.resolve('example/example')``` | 2.2.0 |
-| ``` import example from 'example/example' ``` | 2.2.0 |
+| ``` const example = import('example/example')``` | 2.3.0 | 
+| ``` const example = require('example/example')``` | 2.3.0 |
+| ``` const example = require.resolve('example/example')``` | 2.3.0 |
+| ``` import example from 'example/example' ``` | 2.3.0 |
 
 ![Image01](images/image.png)
 ### Install
