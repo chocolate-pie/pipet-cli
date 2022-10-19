@@ -1,7 +1,5 @@
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,6 +12,14 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
+      - name: Install
+        run: npm install
+      - name: Compile Typescript
+        run: npx tsc
+      - name: Webpack Compile
+        run: npx webpack --config webpack.config.cjs
+      - name: Run Node
+        run: node dist/main.cjs          
       - name: Install Pipet-cli
         run: npm install -D pipet-cli
       - name: Run Pipet-cli
