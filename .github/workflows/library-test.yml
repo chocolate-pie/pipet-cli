@@ -19,8 +19,8 @@ jobs:
       - name: Webpack Compile
         run: npx webpack --config webpack.config.cjs
       - name: Run Node
-        run: node public/main.cjs          
+        run: node public/main.cjs --ext .js,.ts      
       - name: Install Pipet-cli
         run: npm install -D pipet-cli
       - name: Run Pipet-cli
-        run: npx pipet      
+        run: npx pipet --ext .js,.ts
